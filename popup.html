@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outbound Calling Interface</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      width: 500px;
+    }
+
+    .container {
+      padding: 10px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+
+    input[type="text"] {
+      margin-bottom: 20px;
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 10px;
+      font-size: 16px;
+      color: white;
+      background-color: #0A0A0A;
+      border: solid;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background-color: #fff;
+      color: #0A0A0A;
+      border: solid
+    }
+
+    /* Basic styling for the navbar */
+    .navbar {
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar a {
+      color: #0A0A0A;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 20px;
+    }
+    #toast-message{
+      visibility: hidden;
+      background: #abf4ab;
+      margin-top: 5px;
+      padding: 5px 10px;
+      color: #055c05;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+    #settings-section{
+      display: none;
+    }
+  </style>
+  <body>
+    <div class="navbar">
+      <!-- Logo placeholder -->
+      <div class="logo">
+        <img src="assets/images/icon-48x48.png" alt="">
+      </div>
+      <!-- Navigation links -->
+      <div>
+        <a class="nav-item" data-page="home-section" id="home" href="#">Home</a>
+        <a class="nav-item" data-page="settings-section" id="section" href="#">Settings</a>
+      </div>
+    </div>
+    <div id="toast-message"></div>
+    <div class="container" id="home-section">
+      <h1 style="color: #0A0A0A;">Knowledgebase</h1>
+      <form id="knowledgeForm">
+        <span>
+          <label for="enable_text_to_speech">Enable Text to Speech</label>
+          <input type="checkbox" name="enable_text_to_speech" id="enable_text_to_speech" checked>
+        </span>
+        <input type="text" id="title" name="title" placeholder="Title">
+        <textarea name="description" id="description" cols="30" rows="10" placeholder="Description"></textarea>
+        <button type="submit" id="knowledgebase_submit_btn">SUBMIT</button>
+      </form>
+    </div>
+
+    <div class="container" id="settings-section">
+      <h1 style="color: #0A0A0A;">Settings</h1>
+      <form id="settingsForm">
+        <label for="notion_page_id">Notion Page Id</label>
+        <input type="text" id="notion_page_id" name="notion_page_id" placeholder="Notion page id">
+        <button type="submit" id="settings_submit_btn">SUBMIT</button>
+      </form>
+    </div>
+  </body>
+  <script src="script.js"></script>
+  <script src="settings.js"></script>
+</html>

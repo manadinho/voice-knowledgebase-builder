@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "voiceKnowledgebaseBuilder",
+    "version": "0.1.0",
+    "description": "voiceKnowledgebaseBuilder transforms the way you capture and organize knowledge by leveraging the power of speech-to-text technology. As a software engineer, you encounter a myriad of challenges and solutions every day. Keeping track of these valuable insights can be daunting. VoiceNote offers an innovative solution by allowing you to effortlessly record your findings and ideas through voice input, building a personal knowledge base that evolves with your experiences.",
+    "permissions": [
+        "activeTab",
+        "storage",
+        "tabs",
+        "webRequest"
+      ],
+    "icons": {
+        "16": "assets/images/icon-16x16.png",
+        "48": "assets/images/icon-48x48.png",
+        "128": "assets/images/icon-128x128.png"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["content.js"],
+            "css": ["content.css"]
+        }
+    ],
+    "background": {
+        "service_worker": "background.js"
+    }
+
+}
